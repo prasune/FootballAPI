@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>football-api</title>
+</head>
+<body>
+<br>
+<br>
+<script type="text/javascript">
+function getTeamStanding() {
+    var apiUrl = '/footballLeague/teamStandings';
+    fetch(apiUrl, {
+    method: 'GET',
+    headers: {
+      'Authorization': 'api-key 9bb66184e0c8145384fd2cc0f7b914ada57b4e8fd2e4d6d586adcc27c257a978'
+    })
+    .then(response => {
+      return response.json();
+    }).then(data => {
+      result.value = data;
+    }).catch(err => {
+      result.value = err;
+    });
+}
+</script>
+
+<form name="get_team_standing_form">
+    <label for="countryName">Country Name:</label>
+    <input type="text" id="countryName" name="countryName"><br>
+    <label for="leagueName">League Name:</label>
+    <input type="text" id="leagueName" name="leagueName"><br>
+    <label for="teamName">Team Name:</label>
+    <input type="text" id="teamName" name="teamName"><br><br>
+    <input type="submit" value="Submit" onclick="getTeamStanding()">
+</form>
+<div>
+    <textarea id="result" ></textarea>
+</div>
+
+</body>
+</html>
