@@ -4,10 +4,14 @@ import com.test.league.football.controller.utils.ValidationUtil;
 import com.test.league.football.domain.TeamStanding;
 import com.test.league.football.service.FootballLeagueService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.lang.NonNull;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 
 @RestController
 @RequestMapping("/footballLeague")

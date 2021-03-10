@@ -27,7 +27,7 @@ public class FootballLeagueServiceImpl implements FootballLeagueService {
         if (teamStandingEntityOptional.isPresent()) {
             teamStanding = TeamStandingConverter.toTeamStanding(teamStandingEntityOptional.get());
         } else {
-            throw new ResourceNotFoundException();
+            throw new ResourceNotFoundException("TeamStanding");
         }
         return teamStanding;
     }

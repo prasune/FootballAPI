@@ -1,8 +1,8 @@
 package com.test.league.football.exception;
 
-import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.ResponseStatus;
-
-@ResponseStatus(HttpStatus.NOT_FOUND)
 public class ResourceNotFoundException extends RuntimeException {
+
+    public ResourceNotFoundException(String resourceName) {
+        super(resourceName + " resource Not Authorized or Not Found");
+    }
 }
